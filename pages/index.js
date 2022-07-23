@@ -55,7 +55,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           Powered by{' '}
-          <h2 id="EasterEgg" className={styles.logo}>
+          <h2 id="easterEgg" className={styles.logo}>
             Pura força de vontade
           </h2>
         </a>
