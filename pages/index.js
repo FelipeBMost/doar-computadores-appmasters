@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import api from './api/api.js' // Pacote Axios com URL e Token de autenticação 
-import React, {useEffect, useState} from 'react' // Desconstrução de objeto para não precisar usar React.use...
+import React, {useEffect, useState} from 'react'
 
 
 export default function Home() {
