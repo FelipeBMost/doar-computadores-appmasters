@@ -1,7 +1,7 @@
 # doar-computadores-appmasters
 ## Projeto de seleção para estágio Javascript da [App Masters](https://www.appmasters.io/) (link abre na mesma janela)
 
-## Escolhi o seguinte projeto:
+### Escolhi o seguinte projeto:
 
 ### Frontend
 - Criar projeto usando Next.js
