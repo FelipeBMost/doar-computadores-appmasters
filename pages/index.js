@@ -20,11 +20,11 @@ export default function Home() {
       });
     }, []);
 
-    let statusApi = ''; // Variável utilizada para o texto
+    let statusApi = '';           // Variável utilizada para o texto
 
-    if(status) {
+    if(status) {                  // Se alive:true
       statusApi = "API online";
-    } else {
+    } else {                      // Se alive:false
       statusApi = "API offline";
     }
 
