@@ -1,6 +1,6 @@
-
-
 import axios from "axios";
+
+// Criando variável para a solicitação GET
 
 const api = axios.create({
   baseURL: "https://doar-computador-api.herokuapp.com/",
@@ -9,7 +9,9 @@ const api = axios.create({
 
 
 api.interceptors.request.use(async config => {
-  // DECLARAÇÃO DE TOKEN PARA TESTE //
+
+  // Declaração de Token para teste
+
   const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9";
 
   if (token) {
