@@ -1,17 +1,17 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import api from './api/api.js' // Pacote Axios com URL e Token de autenticação 
-import React, {useEffect, useState} from 'react'
+import axios from 'axios' 
+import React, {useEffect, useState} from 'react' // Desconstrução de objeto para não precisar usar React.use...
 
 
 export default function Home() {
 
-  const [status, setStatus] = useState();
+  const [status, setStatus] = useState([]);
 
   // Enviando solicitação GET para a URL definida em 'api.js'
   useEffect(() => {
-      api
-      .get()
+      axios
+      .get('https://doar-computador-api.herokuapp.com/')
       .then((response) => {
         setStatus(response.data.alive) // retornando só o valor de 'alive' por ser o único
       })
@@ -20,11 +20,11 @@ export default function Home() {
       });
     }, []);
 
-    let statusApi = '';           // Variável utilizada para o texto
+    let statusApi = ''; // Variável utilizada para o texto
 
-    if(status) {                  // Se alive:true
+    if(status) {
       statusApi = "API online";
-    } else {                      // Se alive:false
+    } else {
       statusApi = "API offline";
     }
 
@@ -41,9 +41,9 @@ export default function Home() {
         <h1 className={styles.title}>
           Doação de computadores usados
         </h1>
-
+        
         <p className={styles.description}>
-          {statusApi}                      // <------- Texto da API
+          {statusApi}
         </p>
         
       </main>
