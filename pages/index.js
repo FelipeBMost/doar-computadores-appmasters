@@ -43,7 +43,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          {statusApi}
+          {statusApi}                      // <------- Texto da API
         </p>
         
       </main>
