@@ -4,6 +4,7 @@
 ### Escolhi o seguinte projeto:
 
 ## Frontend
+
 - Criar projeto usando Next.js
 - Na rota inicial, exibir com H1 com "Doação de computadores usados"
 - Instalar pacote AXIOS no projeto
@@ -15,6 +16,30 @@
 - Criar formulário com duas sessões
 - O formulário deve ficar na primeira página, para facilitar a doação
 - Manter o projeto usando o Next, ou seja, não implementar o react-router
+
+Estrutura dos dados a serem enviados/recebidos.
+```
+{
+    name,
+    email,
+    phone,
+    zip,
+    city,
+    state,
+    streetAdrress,
+    number,
+    complement,
+    neighborhood,
+    deviceCount,
+    devices: [
+        {type, condition},
+        {type, condition},
+        ...
+    ]
+}
+```
+
+Todos campos são obrigatórios (inclusive em devices), exceto o endereço de email e complement.
 
 ### Primeira parte, dados pessoais
 
