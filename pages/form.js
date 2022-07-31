@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from '../styles/Home.module.css';
 import axios from 'axios';
 import { useState } from 'react';
@@ -105,7 +106,7 @@ export default function Form() {
 // ------------------- FUNÇÃO PARA VERIFICAR SE O EMAIL É VÁLIDO OU NÃO VERIFICAR CASO SEJA DEIXADO EM BRANCO ------------ //
   const handleEmail = (e) => {
     if(e.length > 0) {
-      const regExp = new RegExp('^[-\w\.]+@([-\w]+\.)+[-\w]{2,4}$|[\s]');
+      const regExp = new RegExp('^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$', 'g');
       if(!(regExp.test(e))){ 
         setEmailFailure(true)
       } else {
@@ -153,23 +154,23 @@ export default function Form() {
                 name='mail'
                 title='mail'
                 onBlur={(e) => handleEmail(e.target.value)} />
-              { emailFailure && <span className={styles.notFound}>Deixe o email em branco caso não queira cadastrar</span>}
+              { emailFailure && <span className={styles.notFound}>Inválido. Deixe em branco para não cadastrar</span>}
             </group>
             <group className={styles.group}>
-              <label htmlFor='phone'>Telefone: (Apenas números )</label>
+              <label htmlFor='phone'>Telefone: DDD+Número</label>
               <input 
                 type='phone'
                 id='phone'
                 name='phone'
                 title='Apenas números'
-                pattern='[0-9]{11}|[0-9]{10}'
-                maxLength={11}
+                pattern='[0-9]{12}|[0-9]{11}'
+                maxLength={12}
                 required  />
             </group>
           </div>
 
           {/*------------------ ENDEREÇO ------------------------- */}
-          <div className={styles.containerTwoColumns}>
+          <div className={styles.containerTwoColumnsZip}>
             <group className={styles.group}>
               <label htmlFor='zip'>CEP: </label>
               <input 

@@ -24,11 +24,15 @@
   padding: 2rem 0;
 }
 
-.containerTwoColumns {
+.containerTwoColumns, .containerTwoColumnsZip {
   display: grid;
   grid-template-columns: auto auto;
   width: 100%;
   align-items: center;
+}
+
+.containerTwoColumnsZip {
+  width: 40%;
 }
 
 .containerThreeColumns {
