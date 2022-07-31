@@ -1,33 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import api from './api/api.js' // Pacote Axios com URL e Token de autenticação 
-import React, {useEffect, useState} from 'react' // Desconstrução de objeto para não precisar usar React.use...
-
+import Form from './form' // Formulário
 
 export default function Home() {
-
-  const [status, setStatus] = useState();
-
-  // Enviando solicitação GET para a URL definida em 'api.js'
-  useEffect(() => {
-      api
-      .get()
-      .then((response) => {
-        setStatus(response.data.alive) // retornando só o valor de 'alive' por ser o único
-      })
-      .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-      });
-    }, []);
-
-    let statusApi = ''; // Variável utilizada para o texto
-
-    if(status) {
-      statusApi = "API online";
-    } else {
-      statusApi = "API offline";
-    }
-
+  
   return (
     
     <div className={styles.container}>
@@ -42,10 +18,10 @@ export default function Home() {
           Doação de computadores usados
         </h1>
 
-        <p className={styles.description}>
-          {statusApi}
-        </p>
-        
+        <h2>Formulário de Doação</h2>
+      
+        <Form></Form> {/* Formulário */}
+
       </main>
 
       <footer className={styles.footer}>
@@ -55,11 +31,12 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           Powered by{' '}
-          <h2 id="EasterEgg" className={styles.logo}>
+          <h2 id="easterEgg" className={styles.logo}>
             Pura força de vontade
           </h2>
         </a>
       </footer>
     </div>
+    
   )
 }
